@@ -3,139 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="appTitle">Hurawatch</title>
+    <title data-lang-key="appTitle">Cinema 18</title>
     <!-- Favicon: Using SVG emoji for the movie icon. More concise and no external files needed. -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
 
-    <!-- Description and Keywords for SEO - These meta tags are for the main page, Blogger might override them. -->
-    <meta name="description" data-lang-key="metaDescription" content="Hurawatch – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Hurawatch!">
-    <meta name="keywords" data-lang-key="metaKeywords" content="Hurawatch, free movies online, HD streaming, watch TV shows, latest movies, no sign-up, free entertainment, online movie site">
+    <!-- Description and Keywords for SEO -->
+    <meta name="description" data-lang-key="metaDescription" content="Cinema 18 – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Cinema 18!">
+    <meta name="keywords" data-lang-key="metaKeywords" content="Cinema 18, free movies online, HD streaming, watch TV shows, latest movies, no sign-up, free entertainment, online movie site, movies, TV series, streaming">
 
-    <!-- Open Graph Meta Tags for Facebook, WhatsApp, etc. - Blogger might override these. -->
-    <meta property="og:title" content="Hurawatch">
-    <meta property="og:description" data-lang-key="ogDescription" content="Hurawatch – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Hurawatch!">
+    <!-- Open Graph Meta Tags for Facebook, WhatsApp, etc. -->
+    <meta property="og:title" content="Cinema 18">
+    <meta property="og:description" data-lang-key="ogDescription" content="Cinema 18 – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Cinema 18!">
     <!-- Updated: Using placeholder image with desired size and text -->
-    <meta property="og:image" content="https://live.staticflickr.com/65535/54675330870_5661b04e12_b.jpg">
+    <meta property="og:image" content="https://live.staticflickr.com/65535/54676575192_49153dfea9_b.jpg">
     <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
-    <meta property="og:url" content="https://hurawatch.pages.dev/"> <!-- Updated to the new Cloudflare Pages URL -->
+    <meta property="og:image:height" content="538">
+    <meta property="og:url" content="https://cinema-18.pages.dev/"> <!-- Updated to reflect potential new Cloudflare Pages URL -->
     <meta property="og:type" content="website">
     <meta property="fb:app_id" content="61577842845885">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@boxofficemovi33"> <!-- Ganti dengan handle Twitter Anda jika ada -->
+    <meta name="twitter:title" content="Cinema 18">
+    <meta name="twitter:description" data-lang-key="ogDescription" content="Cinema 18 – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Cinema 18!">
+    <meta name="twitter:image" content="https://live.staticflickr.com/65535/54676575192_49153dfea9_b.jpg">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS to ensure the default Blogger header is hidden and the custom header is fixed */
+        /* Base styling for HTML and body */
         html, body {
-            height: 100%; /* Important for fixed positioning */
-            min-height: 100vh; /* Fallback and ensures full viewport height */
-            overflow-x: hidden; /* Prevents horizontal scrolling */
-            margin: 0 !important; /* Removes default Blogger margin */
-            padding: 0 !important; /* Removes default Blogger padding */
-            background-color: #1a202c !important; /* Ensures background color matches custom theme */
-            display: flex; /* Uses flexbox for the body */
-            flex-direction: column; /* Arranges flex items in a column */
-            align-items: center; /* Centers items horizontally */
-            font-family: 'Roboto', sans-serif; /* Uses Roboto font */
+            height: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #1a202c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box; /* Apply border-box globally */
         }
         
-        /* Apply border-box globally for consistent box model behavior */
-        html, body, * {
-            box-sizing: border-box;
-        }
-
-        /* Targets and hides default Blogger elements that might appear */
-        #navbar-iframe, /* Blogger navbar iframe */
-        .navbar,
-        .blogger-navbar,
-        #b-navbar,
-        .admin-bar-menu,
-        .blog-admin-bar,
-        .header-outer, /* Blogger header element from your provided CSS */
-        .Header, /* Main header class from your provided CSS */
-        /* Targets elements that might show duplicate "MovieHub USA" outside the main header */
-        .name,
-        .title,
-        .blog-name-title,
-        #Header1_header_text, /* Common ID for blog title widget in Blogger */
-        .blog-title-container,
-        h1.title,
-        .blog-name,
-        .titlewrapper, /* Title wrapper in Blogger template */
-        .descriptionwrapper, /* Description wrapper in Blogger template */
-        /* Adds common Blogger footer elements */
-        #footer-outer,
-        .footer-outer,
-        #footer,
-        .footer-section,
-        .feed-links,
-        .blog-pager,
-        .attribution, /* Usually contains "Powered by Blogger" */
-        .post-footer, /* Might have a footer in each post */
-        .Blog .feed-links,
-        .widget.Footer,
-        #BlogArchive1_bottom, /* Example ID for archive widget in footer */
-        #Attribution1 /* Example ID for attribution widget in footer */
-        {
-            display: none !important;
-            height: 0 !important;
-            visibility: hidden !important;
-            line-height: 0 !important;
-            font-size: 0 !important;
-            width: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important; /* Removes any border that might form lines */
-        }
-
-        /* Adds rules for common Blogger elements that might have a background */
-        #outer-wrapper,
-        .content-outer,
-        .main-outer,
-        .main-inner,
-        .region-inner {
-            background-color: #1a202c !important;
-            margin: 0 !important; /* Ensures no margin creating gaps */
-            padding: 0 !important; /* Ensures no padding creating gaps */
-        }
-
         /* Ensures the custom header remains fixed and sets its internal layout */
         header {
-            position: sticky !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
             max-width: 1280px; /* Limits header width */
             z-index: 50; /* Ensures it's above other content */
-            background-color: #1a202c !important; /* Ensures header has a dark background */
+            background-color: #1a202c;
             box-sizing: border-box; /* Ensures padding doesn't increase width */
             display: flex; /* Uses flexbox for internal layout */
             flex-direction: column; /* Stacks header content vertically */
-            padding-bottom: 0 !important; /* Removes old bottom padding */
-            padding-top: 1.25rem !important; /* Top padding for header top part */
+            padding-bottom: 0;
+            padding-top: 1.25rem; /* Top padding for header top part */
         }
 
-        /* Styles for the top part of the header container (logo, navigation, search) */
-        /* Removed custom CSS for .header-top-row to rely on Tailwind classes */
-
         /* Styles for the genre buttons container (now part of the header) */
-        .genre-buttons-container { /* Uses existing class, not fixed/top */
+        .genre-buttons-container {
             width: 100%;
-            background-color: #1a202c !important; /* Matches main header background color */
+            background-color: #1a202c; /* Matches main header background color */
             padding: 1rem; /* p-4 */
             border-top: 1px solid rgba(255, 255, 255, 0.1); /* Visual separation line */
         }
         /* Ensures main content starts right after the header */
         main {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+            margin-top: 0;
+            padding-top: 0;
             max-width: 1280px; /* Max width so content isn't too wide on desktop */
             width: 100%; /* Ensures main content takes full available width within max-width */
-            margin-left: auto !important; /* Centers main content */
-            margin-right: auto !important; /* Centers main content */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Adjust font size and padding for nav button to match genre button */
@@ -216,14 +161,14 @@
             display: inline-block; /* Important for background-clip to work correctly */
         }
 
-        /* FIX: Ensures detail title is visible in Blogger */
+        /* FIX: Ensures detail title is visible */
         #detail-title {
-            display: block !important;
-            visibility: visible !important;
-            height: auto !important;
-            font-size: 2.25rem !important; /* Example: Keeps tailwind h2 text size */
-            line-height: normal !important;
-            margin: 0 0 0.5rem 0 !important; /* Adjust margin as needed */
+            display: block;
+            visibility: visible;
+            height: auto;
+            font-size: 2.25rem; /* Example: Keeps tailwind h2 text size */
+            line-height: normal;
+            margin: 0 0 0.5rem 0; /* Adjust margin as needed */
         }
 
         /* Style for static movie cards in Layer 3 */
@@ -287,9 +232,9 @@
         <div class="flex flex-col sm:flex-row items-center justify-between w-full py-4">
             <div class="flex items-center mb-4 sm:mb-0">
                 <!-- Logo (simple text) - Now wrapped in an anchor tag to act as a Home button -->
-                <a href="https://hurawatch-club.blogspot.com/" id="home-logo-link" class="inline-flex items-center text-indigo-500 hover:text-indigo-400 transition-colors duration-200">
+                <a href="#" id="home-logo-link" class="inline-flex items-center text-indigo-500 hover:text-indigo-400 transition-colors duration-200">
                 <span class="text-3xl font-bold mr-2">🎬</span>
-                <h1 class="text-4xl font-bold whitespace-nowrap rainbow-text" data-lang-key="appTitle">Hurawatch</h1>
+                <h1 class="text-4xl font-bold whitespace-nowrap rainbow-text" data-lang-key="appTitle">Cinema 18</h1>
                 </a>
             </div>
             <nav class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
@@ -319,7 +264,7 @@
         </div>
     </header>
 
-    <main class="flex-grow mx-auto px-4 py-8"> <!-- Removed 'container' class -->
+    <main class="flex-grow mx-auto px-4 py-8">
         <!-- Layer 1: Movie/TV Thumbnails -->
         <section id="layer-1" class="layer-1">
             <h2 class="text-4xl font-bold text-gray-100 mb-8 text-center"><span id="section-title" data-lang-key="popularMovies">Popular Movies</span></h2>
@@ -337,6 +282,10 @@
                 <div class="spinner"></div>
             </div>
             <p id="no-results-message" class="hidden text-center text-gray-400 text-lg mt-8" data-lang-key="noResultsFound">No results found for your search.</p>
+            
+            <!-- Native Banner Ad Container - Placed at the end of Layer 1 -->
+            <div id="container-dbd35cfd5d26b914b7c242747bc0a30b" class="mt-8"></div>
+
         </section>
 
         <!-- Layer 2: Movie/TV Detail -->
@@ -372,7 +321,7 @@
                             <span data-lang-key="whyWatchButtonText">Why Watch This?</span>
                         </button>
                         <div id="why-watch-output" class="bg-gray-700 p-4 rounded-md mt-4 text-gray-200 hidden">
-                            <p class="font-semibold text-lg mb-2" data-lang-key="insightTitle">Insight from Hurawatch:</p>
+                            <p class="font-semibold text-lg mb-2" data-lang-key="insightTitle">Insight from Cinema 18:</p>
                             <p id="why-watch-text" class="text-sm"></p>
                             <div id="why-watch-spinner" class="spinner hidden mt-4 mx-auto"></div>
                         </div>
@@ -398,12 +347,12 @@
                 <div class="mt-8 text-center">
                     <h3 class="text-xl font-bold text-gray-100 mb-4" data-lang-key="youMightAlsoLike">You Might Also Like This:</h3>
                     <div id="static-movie-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                        <!-- Static Movie Card: Hurawatch (Placeholder for consistent size) -->
-                        <div class="static-movie-card" data-media-id="0" data-media-type="site">
-                            <img src="https://live.staticflickr.com/65535/54677682364_f8f8169b16.jpg" alt="Hurawatch Site Poster" loading="lazy" onerror="this.src='https://placehold.co/300x450/FF0000/FFFFFF?text=IMAGE+ERROR';">
+                        <!-- Static Movie Card: Intimacy (2001) - Corrected ID and type -->
+                        <div class="static-movie-card" data-media-id="11845" data-media-type="movie">
+                            <img src="https://image.tmdb.org/t/p/w300/I0mlv1FahaLJqu2ByffMXEn4NN.jpg" alt="Intimacy (2001) Poster" loading="lazy" onerror="this.src='https://placehold.co/300x450/FF0000/FFFFFF?text=IMAGE+ERROR';">
                             <div class="info">
-                                <h3>Hurawatch</h3>
-                                <p>Site</p>
+                                <h3>Intimacy</h3>
+                                <p>2001</p>
                             </div>
                         </div>
                         <!-- Static Movie Card: 3-D Sex and Zen: Extreme Ecstasy (2011) -->
@@ -527,7 +476,7 @@
     <!-- Footer -->
     <footer class="w-full max-w-screen-xl mx-auto mt-12 py-8 bg-gray-900 text-gray-400 text-center text-sm border-t border-gray-700 rounded-t-lg">
         <div class="container mx-auto px-4">
-            <p>&copy; <span id="current-year"></span> Hurawatch. <span data-lang-key="allRightsReserved">All rights reserved.</span></p>
+            <p>&copy; <span id="current-year"></span> Cinema 18. <span data-lang-key="allRightsReserved">All rights reserved.</span></p>
             <p class="mt-2">
                 <a href="#" class="hover:text-white transition-colors duration-200" data-lang-key="privacyPolicy">Privacy Policy</a> | 
                 <a href="#" class="hover:text-white transition-colors duration-200" data-lang-key="termsOfService">Terms of Service</a> | 
@@ -535,6 +484,15 @@
             </p>
         </div>
     </footer>
+
+    <!-- Adsterra Popunder Script -->
+    <script type='text/javascript' src='//discreetisabella.com/20/37/5f/20375fdda5d0de115f21d080c109eb84.js'></script>
+    
+    <!-- Adsterra Native Banner Script -->
+    <script async="async" data-cfasync="false" src="//discreetisabella.com/dbd35cfd5d26b914b7c242747bc0a30b/invoke.js"></script>
+
+    <!-- Adsterra Social Bar Script -->
+    <script type='text/javascript' src='//discreetisabella.com/9f/02/50/9f025010d433aaa2df28ea3c3cec37ef.js'></script>
 
     <script type="module">
         // **START OF MODIFICATION**
@@ -653,10 +611,10 @@
         // Translations object
         const translations = {
             es: {
-                appTitle: "Hurawatch",
-                metaDescription: "Descubre 'Hurawatch': Tu blog de cine con reseñas honestas, análisis profundos y recomendaciones de películas independientes, clásicos y próximos estrenos. ¡Celebramos la magia del séptimo arte!",
-                metaKeywords: "blog de películas, críticas de cine, noticias de cine, análisis de películas, recomendaciones de películas, últimas películas, películas clásicas, próximos estrenos, discusión de cine, noticias de cine, guías de películas, blog de entretenimiento, industria cinematográfica, guías de streaming, tráilers de películas, taquilla, géneros de películas, comunidad cinéfila",
-                ogDescription: "Descubre 'Hurawatch': Tu blog de cine con reseñas honestas, análisis profundos y recomendaciones de películas independientes, clásicos y próximos estrenos. ¡Celebramos la magia del séptimo arte!",
+                appTitle: "Cinema 18",
+                metaDescription: "Cinema 18 – ¡Transmita las últimas películas y programas de televisión en HD gratis! Disfrute de entretenimiento ilimitado sin registrarse. ¡Mire ahora en Cinema 18!",
+                metaKeywords: "Cinema 18, películas gratis en línea, transmisión HD, ver programas de televisión, últimas películas, sin registro, entretenimiento gratis, sitio de películas en línea, películas, series de TV, streaming",
+                ogDescription: "Cinema 18 – ¡Transmita las últimas películas y programas de televisión en HD gratis! Disfrute de entretenimiento ilimitado sin registrarse. ¡Mire ahora en Cinema 18!",
                 moviesButton: "Películas",
                 tvSeriesButton: "Series de TV",
                 searchMoviesPlaceholder: "Buscar películas...",
@@ -673,7 +631,7 @@
                 castPrefix: "Elenco: ",
                 plotNotAvailable: "Trama no disponible.",
                 whyWatchButtonText: "¿Por qué ver esto?", // Updated: Removed sparkle emoji
-                insightTitle: "Información de Hurawatch:",
+                insightTitle: "Información de Cinema 18:",
                 stream1Button: "Stream 1",
                 stream2Button: "Stream 2",
                 stream3Button: "Stream 3",
@@ -713,10 +671,10 @@
                 }
             },
             en: {
-                appTitle: "Hurawatch",
-                metaDescription: "Discover 'Hurawatch' a captivating film filled with emotion, drama, and unforgettable storytelling. Follow the journey of its compelling characters in this must-watch cinematic experience. Watch now!",
-                metaKeywords: "movie blog, film reviews, movie news, film analysis, movie recommendations, latest movies, classic films, upcoming releases, film discussion, cinema news, movie guides, entertainment blog, film industry, streaming guides, movie trailers, box office, movie genres, cinephile community",
-                ogDescription: "Discover 'Hurawatch' a captivating film filled with emotion, drama, and unforgettable storytelling. Follow the journey of its compelling characters in this must-watch cinematic experience. Watch now!",
+                appTitle: "Cinema 18",
+                metaDescription: "Cinema 18 – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Cinema 18!",
+                metaKeywords: "Cinema 18, free movies online, HD streaming, watch TV shows, latest movies, no sign-up, free entertainment, online movie site, movies, TV series, streaming",
+                ogDescription: "Cinema 18 – Stream the latest movies & TV shows in HD for free! Enjoy unlimited entertainment with no sign-up. Watch now at Cinema 18!",
                 moviesButton: "Movies",
                 tvSeriesButton: "TV Series",
                 searchMoviesPlaceholder: "Search movies...",
@@ -733,7 +691,7 @@
                 castPrefix: "Cast: ",
                 plotNotAvailable: "No plot available.",
                 whyWatchButtonText: "Why Watch This?", // Updated: Removed sparkle emoji
-                insightTitle: "Insight from Hurawatch:",
+                insightTitle: "Insight from Cinema 18:",
                 stream1Button: "Stream 1",
                 stream2Button: "Stream 2",
                 stream3Button: "Stream 3",
@@ -773,10 +731,10 @@
                 }
             },
             id: {
-                appTitle: "Hurawatch",
-                metaDescription: "Temukan 'Hurawatch' sebuah film menawan yang penuh emosi, drama, dan penceritaan yang tak terlupakan. Ikuti perjalanan karakter-karakternya yang memukau dalam pengalaman sinematik yang wajib ditonton ini. Tonton sekarang!",
-                metaKeywords: "blog film, ulasan film, berita film, analisis film, rekomendasi film, film terbaru, film klasik, rilis mendatang, diskusi film, berita sinema, panduan film, blog hiburan, industri film, panduan streaming, trailer film, box office, genre film, komunitas pecinta film",
-                ogDescription: "Temukan 'Hurawatch' sebuah film menawan yang penuh emosi, drama, dan penceritaan yang tak terlupakan. Ikuti perjalanan karakter-karakternya yang memukau dalam pengalaman sinematik yang wajib ditonton ini. Tonton sekarang!",
+                appTitle: "Cinema 18",
+                metaDescription: "Cinema 18 – Streaming film & serial TV terbaru dalam HD gratis! Nikmati hiburan tanpa batas tanpa perlu mendaftar. Tonton sekarang di Cinema 18!",
+                metaKeywords: "Cinema 18, film gratis online, streaming HD, nonton serial TV, film terbaru, tanpa daftar, hiburan gratis, situs film online, film, serial TV, streaming",
+                ogDescription: "Cinema 18 – Streaming film & serial TV terbaru dalam HD gratis! Nikmati hiburan tanpa batas tanpa perlu mendaftar. Tonton sekarang di Cinema 18!",
                 moviesButton: "Film",
                 tvSeriesButton: "Serial TV",
                 searchMoviesPlaceholder: "Cari film...",
@@ -793,7 +751,7 @@
                 castPrefix: "Pemeran: ",
                 plotNotAvailable: "Plot tidak tersedia.",
                 whyWatchButtonText: "Mengapa Menonton Ini?", // Updated: Removed sparkle emoji
-                insightTitle: "Wawasan dari Hurawatch:",
+                insightTitle: "Wawasan dari Cinema 18:",
                 stream1Button: "Stream 1",
                 stream2Button: "Stream 2",
                 stream3Button: "Stream 3",
@@ -1120,10 +1078,14 @@
 
                 // Fetch release dates/content ratings for age certification
                 let ageRating = currentLang.notAvailable;
+                // Declare releaseDatesData and contentRatingsData outside the if blocks
+                let releaseDatesData = { results: [] }; 
+                let contentRatingsData = { results: [] };
+
                 if (mediaType === 'movie') {
                     const releaseDatesResponse = await fetch(`${TMDB_BASE_URL}${mediaTypeEndpoints[mediaType].releaseDates}${mediaId}/release_dates?api_key=${TMDB_API_KEY}`);
                     if (releaseDatesResponse.ok) {
-                        const releaseDatesData = await releaseDatesResponse.json();
+                        releaseDatesData = await releaseDatesResponse.json(); // Assign value here
                         const usRelease = releaseDatesData.results.find(r => r.iso_3166_1 === 'US');
                         if (usRelease && usRelease.release_dates.length > 0) {
                             ageRating = usRelease.release_dates[0].certification || currentLang.notAvailable;
@@ -1134,7 +1096,7 @@
                 } else if (mediaType === 'tv') {
                     const contentRatingsResponse = await fetch(`${TMDB_BASE_URL}${mediaTypeEndpoints[mediaType].contentRatings}${mediaId}/content_ratings?api_key=${TMDB_API_KEY}`);
                     if (contentRatingsResponse.ok) {
-                        const contentRatingsData = await contentRatingsResponse.json();
+                        contentRatingsData = await contentRatingsResponse.json(); // Assign value here
                         const usRating = contentRatingsData.results.find(r => r.iso_3166_1 === 'US');
                         if (usRating) {
                             ageRating = usRating.rating || currentLang.notAvailable;
@@ -1533,7 +1495,9 @@
             currentGenreId = null; // Clear genre filter
             // Show movie genre buttons again
             document.querySelectorAll('.genre-button').forEach(button => {
-                button.style.display = 'inline-block';
+                if (button.dataset.mediaType === 'movie') { // Only show movie genre buttons
+                    button.style.display = 'inline-block';
+                }
             });
             fetchAndDisplayMedia('movie', 1); // Reload popular movies
             showLayer(layer1);
@@ -1567,7 +1531,8 @@
                 const mediaType = clickedCard.dataset.mediaType;
                 const mediaTitle = clickedCard.querySelector('h3').textContent; // Get title for slug
                 
-                if (mediaId && mediaType) {
+                // Only proceed if mediaType is 'movie' or 'tv'
+                if ((mediaType === 'movie' || mediaType === 'tv') && mediaId) { // MODIFIED LINE
                     if (!staticAdTriggeredMediaIds.has(mediaId)) {
                         // First click: Open ad
                         window.open(getRandomAdLink(), '_blank'); // Menggunakan tautan acak
@@ -1579,6 +1544,11 @@
                         fetchAndDisplayMediaDetail(mediaId, mediaType, mediaTitle);
                         console.log(`Navigating to details for static card: ${mediaTitle}`);
                     }
+                } else if (mediaType === 'site') { // Handle the 'site' card specifically
+                    console.log('Clicked on site card, not fetching TMDB details.');
+                    // Optionally, you could add different behavior for the site card here,
+                    // like navigating to the home page or showing a message.
+                    // For now, it just prevents the error.
                 }
             }
         });
