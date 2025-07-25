@@ -223,8 +223,7 @@
             text-decoration: none; /* Ensures no underline on hover */
         }
     </style>
-    <!-- Adsterra Popunder Script -->
-    <script type='text/javascript' src='//discreetisabella.com/20/37/5f/20375fdda5d0de115f21d080c109eb84.js'></script>
+    <!-- Removed Adsterra Popunder Script as per user request -->
 </head>
 <body class="bg-gray-900 text-gray-200 min-h-screen flex flex-col">
 
@@ -285,8 +284,8 @@
             </div>
             <p id="no-results-message" class="hidden text-center text-gray-400 text-lg mt-8" data-lang-key="noResultsFound">No results found for your search.</p>
             
-            <!-- Native Banner Ad Container - Placed at the end of Layer 1 -->
-            <div id="container-dbd35cfd5d26b914b7c242747bc0a30b" class="mt-8"></div>
+            <!-- Removed Adsterra Native Banner Ad Container as per user request -->
+            <!-- Removed New Ad Banner Container (f0126c7165569b5b69201ba0bdce9a3f) as per user request -->
 
         </section>
 
@@ -487,11 +486,9 @@
         </div>
     </footer>
 
-    <!-- Adsterra Native Banner Script -->
-    <script async="async" data-cfasync="false" src="//discreetisabella.com/dbd35cfd5d26b914b7c242747bc0a30b/invoke.js"></script>
-
-    <!-- Adsterra Social Bar Script -->
-    <script type='text/javascript' src='//discreetisabella.com/9f/02/50/9f025010d433aaa2df28ea3c3cec37ef.js'></script>
+    <!-- Removed Adsterra Native Banner Script as per user request -->
+    <!-- Removed New Ad Banner Script (f0126c7165569b5b69201ba0bdce9a3f) as per user request -->
+    <!-- Removed Adsterra Social Bar Script as per user request -->
 
     <script type="module">
         // **START OF MODIFICATION**
@@ -545,14 +542,14 @@
         // New Set to store media IDs for which an ad has already been triggered for static cards
         const staticAdTriggeredMediaIds = new Set();
 
-        // New flags for general UI element ad triggers (added for section title and load more button)
-        let isSectionTitleAdTriggered = false;
-        let isLoadMoreButtonAdTriggered = false;
-        let isSearchButtonAdTriggered = false; // New flag
-        let isNavMoviesAdTriggered = false; // New flag
-        let isNavTvSeriesAdTriggered = false; // New flag
-        let isGenreButtonAdTriggered = false; // New flag for any genre button click
-        let isLanguageSelectorAdTriggered = false; // New flag
+        // Removed ad trigger flags as per user request
+        // let isSectionTitleAdTriggered = false;
+        // let isLoadMoreButtonAdTriggered = false;
+        // let isSearchButtonAdTriggered = false;
+        // let isNavMoviesAdTriggered = false;
+        // let isNavTvSeriesAdTriggered = false;
+        // let isGenreButtonAdTriggered = false;
+        // let isLanguageSelectorAdTriggered = false;
 
         // DOM Elements
         const movieGrid = document.getElementById('movie-grid');
@@ -1150,12 +1147,12 @@
             allButton.dataset.genreId = 'all';
             allButton.dataset.mediaType = 'movie';
             allButton.addEventListener('click', () => {
-                // Ad trigger for genre button
-                if (!isGenreButtonAdTriggered) {
-                    window.open(getRandomAdLink(), '_blank');
-                    isGenreButtonAdTriggered = true;
-                    console.log('Adsterra ad triggered by genre button click.');
-                }
+                // Removed Adsterra ad trigger for genre button as per user request
+                // if (!isGenreButtonAdTriggered) {
+                //     window.open(getRandomAdLink(), '_blank');
+                //     isGenreButtonAdTriggered = true;
+                //     console.log('Adsterra ad triggered by genre button click.');
+                // }
 
                 currentSearchQuery = '';
                 searchInput.value = '';
@@ -1184,12 +1181,12 @@
                 button.dataset.mediaType = 'movie'; // Set media type to 'movie' for these genres
 
                 button.addEventListener('click', () => {
-                    // Ad trigger for genre button
-                    if (!isGenreButtonAdTriggered) {
-                        window.open(getRandomAdLink(), '_blank');
-                        isGenreButtonAdTriggered = true;
-                        console.log('Adsterra ad triggered by genre button click.');
-                    }
+                    // Removed Adsterra ad trigger for genre button as per user request
+                    // if (!isGenreButtonAdTriggered) {
+                    //     window.open(getRandomAdLink(), '_blank');
+                    //     isGenreButtonAdTriggered = true;
+                    //     console.log('Adsterra ad triggered by genre button click.');
+                    // }
 
                     currentSearchQuery = '';
                     searchInput.value = '';
@@ -1246,12 +1243,12 @@
 
         // Event Listeners
         loadMoreButton.addEventListener('click', () => {
-            // Ad trigger for load more button
-            if (!isLoadMoreButtonAdTriggered) {
-                window.open(getRandomAdLink(), '_blank');
-                isLoadMoreButtonAdTriggered = true;
-                console.log('Adsterra ad triggered by load more button click.');
-            }
+            // Removed Adsterra ad trigger for load more button as per user request
+            // if (!isLoadMoreButtonAdTriggered) {
+            //     window.open(getRandomAdLink(), '_blank');
+            //     isLoadMoreButtonAdTriggered = true;
+            //     console.log('Adsterra ad triggered by load more button click.');
+            // }
             // Existing load more functionality
             fetchAndDisplayMedia(currentMediaType, currentPage + 1, currentSearchQuery, currentGenreId);
         });
@@ -1413,12 +1410,12 @@
 
 
         searchButton.addEventListener('click', () => {
-            // Ad trigger for search button
-            if (!isSearchButtonAdTriggered) {
-                window.open(getRandomAdLink(), '_blank');
-                isSearchButtonAdTriggered = true;
-                console.log('Adsterra ad triggered by search button click.');
-            }
+            // Removed Adsterra ad trigger for search button as per user request
+            // if (!isSearchButtonAdTriggered) {
+            //     window.open(getRandomAdLink(), '_blank');
+            //     isSearchButtonAdTriggered = true;
+            //     console.log('Adsterra ad triggered by search button click.');
+            // }
             const query = searchInput.value.trim();
             const currentLang = translations[localStorage.getItem('siyatniLang') || 'en']; // Default to English
             if (query) {
@@ -1450,14 +1447,14 @@
 
             handleHashChange(); // Call on load to handle deep linking
 
-            // Event listener for section title (added here)
-            sectionTitle.addEventListener('click', () => {
-                if (!isSectionTitleAdTriggered) {
-                    window.open(getRandomAdLink(), '_blank');
-                    isSectionTitleAdTriggered = true;
-                    console.log('Adsterra ad triggered by section title click.');
-                }
-            });
+            // Removed Adsterra ad trigger for section title as per user request
+            // sectionTitle.addEventListener('click', () => {
+            //     if (!isSectionTitleAdTriggered) {
+            //         window.open(getRandomAdLink(), '_blank');
+            //         isSectionTitleAdTriggered = true;
+            //         console.log('Adsterra ad triggered by section title click.');
+            //     }
+            // });
         };
 
         // Add event listener for hash changes
@@ -1465,12 +1462,12 @@
 
         // Event listener for language selector
         languageSelector.addEventListener('change', (event) => {
-            // Ad trigger for language selector
-            if (!isLanguageSelectorAdTriggered) {
-                window.open(getRandomAdLink(), '_blank');
-                isLanguageSelectorAdTriggered = true;
-                console.log('Adsterra ad triggered by language selector change.');
-            }
+            // Removed Adsterra ad trigger for language selector as per user request
+            // if (!isLanguageSelectorAdTriggered) {
+            //     window.open(getRandomAdLink(), '_blank');
+            //     isLanguageSelectorAdTriggered = true;
+            //     console.log('Adsterra ad triggered by language selector change.');
+            // }
             setLanguage(event.target.value);
             // Re-fetch and display media to update dynamic content like section title
             fetchAndDisplayMedia(currentMediaType, 1, currentSearchQuery, currentGenreId);
@@ -1483,12 +1480,12 @@
 
         // Handle navigation buttons (Movies/TV Series)
         navMoviesButton.addEventListener('click', () => {
-            // Ad trigger for nav movies button
-            if (!isNavMoviesAdTriggered) {
-                window.open(getRandomAdLink(), '_blank');
-                isNavMoviesAdTriggered = true;
-                console.log('Adsterra ad triggered by nav movies button click.');
-            }
+            // Removed Adsterra ad trigger for nav movies button as per user request
+            // if (!isNavMoviesAdTriggered) {
+            //     window.open(getRandomAdLink(), '_blank');
+            //     isNavMoviesAdTriggered = true;
+            //     console.log('Adsterra ad triggered by nav movies button click.');
+            // }
             currentSearchQuery = ''; // Clear search
             searchInput.value = ''; // Clear search input
             currentGenreId = null; // Clear genre filter
@@ -1504,12 +1501,12 @@
         });
 
         navTvSeriesButton.addEventListener('click', () => {
-            // Ad trigger for nav TV series button
-            if (!isNavTvSeriesAdTriggered) {
-                window.open(getRandomAdLink(), '_blank');
-                isNavTvSeriesAdTriggered = true;
-                console.log('Adsterra ad triggered by nav TV series button click.');
-            }
+            // Removed Adsterra ad trigger for nav TV series button as per user request
+            // if (!isNavTvSeriesAdTriggered) {
+            //     window.open(getRandomAdLink(), '_blank');
+            //     isNavTvSeriesAdTriggered = true;
+            //     console.log('Adsterra ad triggered by nav TV series button click.');
+            // }
             currentSearchQuery = ''; // Clear search
             searchInput.value = ''; // Clear search input
             currentGenreId = null; // Clear genre filter
