@@ -41,6 +41,11 @@
             font-family: 'Roboto', sans-serif; /* Uses Roboto font */
         }
         
+        /* Apply border-box globally for consistent box model behavior */
+        html, body, * {
+            box-sizing: border-box;
+        }
+
         /* Targets and hides default Blogger elements that might appear */
         #navbar-iframe, /* Blogger navbar iframe */
         .navbar,
@@ -314,7 +319,7 @@
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 py-8">
+    <main class="flex-grow mx-auto px-4 py-8"> <!-- Removed 'container' class -->
         <!-- Layer 1: Movie/TV Thumbnails -->
         <section id="layer-1" class="layer-1">
             <h2 class="text-4xl font-bold text-gray-100 mb-8 text-center"><span id="section-title" data-lang-key="popularMovies">Popular Movies</span></h2>
