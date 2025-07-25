@@ -532,39 +532,17 @@
     </footer>
 
     <script type="module">
-        // Initialize global variables from Canvas/Firebase environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        // **START OF MODIFICATION**
 
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        // Removed Firebase initialization as it's not needed for current features
+        // and __firebase_config is a Canvas-specific variable.
+        // If you need Firebase (Auth, Firestore) on Cloudflare Pages,
+        // you will need to manually add your Firebase project configuration here.
 
-        // Initialize Firebase
-        let app;
-        let db;
-        let auth;
-        let userId;
+        let userId = crypto.randomUUID(); // Generate a random UUID for user identification
+        console.log("User ID (generated locally):", userId);
 
-        try {
-            app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            auth = getAuth(app);
-
-            // Authenticate user
-            if (typeof __initial_auth_token !== 'undefined') {
-                await signInWithCustomToken(auth, __initial_auth_token);
-            } else {
-                await signInAnonymously(auth);
-            }
-            userId = auth.currentUser?.uid || crypto.randomUUID(); // Get user ID or generate a random one
-            console.log("Firebase initialized and user authenticated. User ID:", userId);
-        } catch (error) {
-            console.error("Error initializing Firebase or authenticating:", error);
-            // Fallback for userId if Firebase fails
-            userId = crypto.randomUUID();
-        }
+        // **END OF MODIFICATION**
 
         // TMDB API Key
         const TMDB_API_KEY = '92d8deed10d8735da58f6777deee8a74';
@@ -763,7 +741,7 @@
                 errorTitle: "Error",
                 infoTitle: "Info",
                 failedToLoadMedia: "Failed to load media. Please try again later.",
-                failedToLoadDetails: "Failed to load media details. Please try again.",
+                failedToLoadDetails: "Failed to try again.",
                 noMediaSelected: "No media selected for streaming.",
                 imdbIdNotAvailable: "IMDb ID not available for streaming. Please try Stream 1.",
                 noPlotForInsight: "Plot summary for this {mediaTypeName} is not available to generate insights.",
