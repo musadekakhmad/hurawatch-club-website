@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hurawatch-filme.pages.dev/sitemap.xml
